@@ -8,5 +8,5 @@ import java.util.Optional;
 public interface GenreService {
     GenreDTO addGenre(GenreDTO genreDTO);
     List<GenreDTO> getAll();
-    Optional<GenreDTO> getByTitle();
+    Optional<GenreDTO> getByTitle(String title);
 }
