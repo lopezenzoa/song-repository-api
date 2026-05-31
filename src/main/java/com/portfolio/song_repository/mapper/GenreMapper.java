@@ -17,7 +17,7 @@ public class GenreMapper {
     public static Genre toEntity(GenreDTO genreDTO) {
         Genre entity = new Genre();
 
-        entity.setTitle(genreDTO.getTitle().toUpperCase());
+        entity.setTitle(genreDTO.getTitle().trim().toUpperCase());
         entity.setRelatedSongs(SongMapper.toEntityList(genreDTO.getRelatedSongs()));
 
         return entity;

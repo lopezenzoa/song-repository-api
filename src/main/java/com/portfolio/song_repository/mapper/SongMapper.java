@@ -20,7 +20,7 @@ public class SongMapper {
     public static Song toEntity(SongDTO songDTO) {
         Song entity = new Song();
 
-        entity.setTitle(songDTO.getTitle());
+        entity.setTitle(songDTO.getTitle().trim().toUpperCase());
         entity.setDuration(songDTO.getDuration());
         entity.setReleaseDate(songDTO.getReleaseDate());
 

@@ -19,7 +19,7 @@ public class AlbumMapper {
     public static Album toEntity(AlbumDTO albumDTO) {
         Album entity = new Album();
 
-        entity.setTitle(albumDTO.getTitle());
+        entity.setTitle(albumDTO.getTitle().trim().toUpperCase());
         entity.setAuthor(AuthorMapper.toEntity(albumDTO.getAuthor()));
         entity.setListedSongs(SongMapper.toEntityList(albumDTO.getListedSongs()));
         entity.setReleaseDate(albumDTO.getReleaseDate());
