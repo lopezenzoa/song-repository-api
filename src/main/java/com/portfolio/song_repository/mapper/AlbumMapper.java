@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AlbumMapper {
-    static AlbumDTO toDto(Album album) {
+    public static AlbumDTO toDto(Album album) {
         return new AlbumDTO(
                 album.getTitle(),
                 AuthorMapper.toDto(album.getAuthor()),
@@ -16,7 +16,7 @@ public class AlbumMapper {
         );
     }
 
-    static Album toEntity(AlbumDTO albumDTO) {
+    public static Album toEntity(AlbumDTO albumDTO) {
         Album entity = new Album();
 
         entity.setTitle(albumDTO.getTitle());
@@ -27,7 +27,7 @@ public class AlbumMapper {
         return entity;
     }
 
-    static List<AlbumDTO> toDtoList(List<Album> albums) {
+    public static List<AlbumDTO> toDtoList(List<Album> albums) {
         List<AlbumDTO> albumDTOS = new ArrayList<>();
 
         albums.forEach(album -> albumDTOS.add(toDto(album)));
@@ -35,7 +35,7 @@ public class AlbumMapper {
         return albumDTOS;
     }
 
-    static List<Album> toEntityList(List<AlbumDTO> albumDTOS) {
+    public static List<Album> toEntityList(List<AlbumDTO> albumDTOS) {
         List<Album> albums = new ArrayList<>();
 
         albumDTOS.forEach(albumDTO -> albums.add(toEntity(albumDTO)));

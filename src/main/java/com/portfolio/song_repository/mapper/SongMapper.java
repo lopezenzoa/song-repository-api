@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SongMapper {
-    static SongDTO toDto(Song song) {
+    public static SongDTO toDto(Song song) {
         SongDTO songDTO = new SongDTO();
 
         song.setTitle(song.getTitle());
@@ -17,7 +17,7 @@ public class SongMapper {
         return songDTO;
     }
 
-    static Song toEntity(SongDTO songDTO) {
+    public static Song toEntity(SongDTO songDTO) {
         Song entity = new Song();
 
         entity.setTitle(songDTO.getTitle());
@@ -27,7 +27,7 @@ public class SongMapper {
         return entity;
     }
 
-    static List<SongDTO> toDtoList(List<Song> songs) {
+    public static List<SongDTO> toDtoList(List<Song> songs) {
         List<SongDTO> songDTOS = new ArrayList<>();
 
         songs.forEach(song -> songDTOS.add(toDto(song)));
@@ -35,7 +35,7 @@ public class SongMapper {
         return songDTOS;
     }
 
-    static List<Song> toEntityList(List<SongDTO> songDTOS) {
+    public static List<Song> toEntityList(List<SongDTO> songDTOS) {
         List<Song> songs = new ArrayList<>();
 
         songDTOS.forEach(songDTO -> songs.add(toEntity(songDTO)));

@@ -4,7 +4,7 @@ import com.portfolio.song_repository.dto.AuthorDTO;
 import com.portfolio.song_repository.model.Author;
 
 public class AuthorMapper {
-    static AuthorDTO toDto(Author author) {
+    public static AuthorDTO toDto(Author author) {
         return new AuthorDTO(
                 author.getName(),
                 author.getCountry(),
@@ -14,7 +14,7 @@ public class AuthorMapper {
         );
     }
 
-    static Author toEntity(AuthorDTO authorDTO) {
+    public static Author toEntity(AuthorDTO authorDTO) {
         Author entity = new Author();
 
         entity.setName(authorDTO.getName());
